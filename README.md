@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can see this in action got to [Issues Consulter](ljnferreira.surge.sh).
+You can see this in action got to [Issues Consulter](https://ljnferreira.surge.sh).
 
 ## Available Scripts
 
