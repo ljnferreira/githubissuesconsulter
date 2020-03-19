@@ -38,7 +38,7 @@ export const Form = styled.form`
 
 `;
 
-//Criando animcação do botao
+//Criando animação do botao
 const animate = keyframes`
   from{
     transform: rotate(0deg);

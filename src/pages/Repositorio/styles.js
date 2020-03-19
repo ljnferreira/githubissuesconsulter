@@ -1,5 +1,15 @@
-import styled from 'styled-components';
+import styled, {keyframes, css} from 'styled-components';
 import {Link} from 'react-router-dom';
+
+const animate = keyframes`
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+`;
 
 export const Loading = styled.div`
   color: #FFF;
@@ -7,6 +17,13 @@ export const Loading = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  ${
+    css`
+      svg{
+        animation: ${animate} 2s linear infinite;
+      }
+    `
+  }
 `;
 
 export const Container = styled.div`

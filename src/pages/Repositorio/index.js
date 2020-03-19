@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Owner, Loading, BackButton, IssuesList, PageActions, FilterList} from './styles';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaSpinner } from 'react-icons/fa';
 import api from '../../services/api';
 
 export default function Repositorio({match}){
@@ -75,9 +75,12 @@ export default function Repositorio({match}){
 
   if(loading){
     return(
-      <Loading>
-        <h1>Carregando...</h1>
-      </Loading>
+      <Container>
+        <Loading>
+          <FaSpinner color="#000" size={50}/>
+        </Loading>
+      </Container>
+      
     )
   }
   
