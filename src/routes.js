@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Navbar} from './components/Navbar'
 
 import Main from './pages/Main';
 import Repositorio from './pages/Repositorio';
@@ -7,6 +8,7 @@ import Repositorio from './pages/Repositorio';
 export default function Routes(){
   return(
     <BrowserRouter>
+      <Navbar/>
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/repositorio/:repositorio" component={Repositorio} />

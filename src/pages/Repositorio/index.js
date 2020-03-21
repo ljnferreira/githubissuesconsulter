@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Container, Owner, Loading, BackButton, IssuesList, PageActions, FilterList} from './styles';
-import { FaArrowLeft, FaSpinner } from 'react-icons/fa';
+import { FaArrowLeft, FaCircleNotch } from 'react-icons/fa';
 import api from '../../services/api';
 
 export default function Repositorio({match}){
@@ -77,7 +77,7 @@ export default function Repositorio({match}){
     return(
       <Container>
         <Loading>
-          <FaSpinner color="#000" size={50}/>
+          <FaCircleNotch color="#444" size={50}/>
         </Loading>
       </Container>
       
@@ -95,7 +95,9 @@ export default function Repositorio({match}){
           src={repositorio.owner.avatar_url} 
           alt={repositorio.owner.login} 
           />
-          <h1>{repositorio.name}</h1>
+          <a href={repositorio.html_url} target="_blank" rel="noopener noreferrer">
+            <h1>{repositorio.name}</h1>
+          </a>
           <p>{repositorio.description}</p>
         </Owner>
 
@@ -118,7 +120,7 @@ export default function Repositorio({match}){
 
               <div>
                 <strong>
-                  <a href={issue.html_url}>{issue.title}</a>
+                  <a href={issue.html_url} target="_blank" rel="noopener noreferrer"> {issue.title}</a>
 
                   {issue.labels.map(label => (
                     <span key={String(label.id)}>{label.name}</span>

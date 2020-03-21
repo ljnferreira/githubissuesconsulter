@@ -50,7 +50,7 @@ export const Owner = styled.header`
 
   h1{
     font-size: 30px;
-    color:#0D2636;
+    
   }
 
   p{
@@ -62,6 +62,14 @@ export const Owner = styled.header`
     max-width: 400px;
 
   }  
+
+  a{
+    text-decoration: none;
+    color:#0D2636;
+  }
+  a:hover{
+    opacity: 0.9;
+  }
 
 
 `;
