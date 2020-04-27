@@ -9,7 +9,7 @@ export default function Repositorio({match}){
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [filters, setFilters] = useState([
+  const [filters] = useState([
     {state: 'all', label: 'Todas', active: true},
     {state: 'open', label: 'Abertas', active: false},
     {state: 'closed', label: 'Fechadas', active: false},
@@ -17,7 +17,7 @@ export default function Repositorio({match}){
   const [filterIndex, setFilterIndex] = useState(0);
 
   useEffect(()=> {
-    
+
     async function load(){
       const nomeRepo = decodeURIComponent(match.params.repositorio);
 
@@ -25,7 +25,7 @@ export default function Repositorio({match}){
         api.get(`/repos/${nomeRepo}`),
         api.get(`/repos/${nomeRepo}/issues`, {
           params:{
-            state: filters.find(f => f.active).state, 
+            state: filters.find(f => f.active).state,
             per_page: 5
           }
         })
@@ -63,7 +63,7 @@ export default function Repositorio({match}){
     loadIssue();
 
   }, [filterIndex, filters, match.params.repositorio, page]);
-  
+
   function handlePage(action){
     setPage(action === 'back' ? page - 1 : page + 1 )
   }
@@ -80,10 +80,10 @@ export default function Repositorio({match}){
           <FaCircleNotch color="#444" size={50}/>
         </Loading>
       </Container>
-      
+
     )
   }
-  
+
   return(
     <Container>
         <BackButton to="/">
@@ -91,9 +91,9 @@ export default function Repositorio({match}){
         </BackButton>
 
         <Owner>
-          <img 
-          src={repositorio.owner.avatar_url} 
-          alt={repositorio.owner.login} 
+          <img
+          src={repositorio.owner.avatar_url}
+          alt={repositorio.owner.login}
           />
           <a href={repositorio.html_url} target="_blank" rel="noopener noreferrer">
             <h1>{repositorio.name}</h1>
@@ -137,8 +137,8 @@ export default function Repositorio({match}){
         </IssuesList>
 
         <PageActions>
-          <button 
-          type="button" 
+          <button
+          type="button"
           onClick={()=> handlePage('back') }
           disabled={page < 2}
           >

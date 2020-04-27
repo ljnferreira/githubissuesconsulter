@@ -16,7 +16,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 5px 5px #eee;
+  box-shadow: 0px 0px 5px #ccc;
   & span{
     padding-left: 8px;
   }
