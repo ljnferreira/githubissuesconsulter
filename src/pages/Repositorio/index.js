@@ -145,7 +145,11 @@ export default function Repositorio({match}){
             Voltar
           </button>
 
-          <button type="button" onClick={()=> handlePage('next') }>
+          <button
+          type="button"
+          onClick={()=> handlePage('next')}
+          disabled={issues.length === 0}
+          >
             Proxima
           </button>
         </PageActions>
