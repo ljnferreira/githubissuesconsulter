@@ -14,5 +14,5 @@ export const Navbar = () => {
       </Nav>
     </header>
   )
-        
+
 }

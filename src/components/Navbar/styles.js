@@ -7,6 +7,10 @@ export const HomeLink = styled(Link)`
   &:hover{
     opacity:0.9;
   }
+  span{
+    font-weight: 600;
+  }
+
 `;
 export const Nav = styled.nav`
   width: 100%;
