@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You can see this in action going to [Issues Consulter](https://https://gitissuesconsulter.herokuapp.com/).
+You can see this in action going to [Issues Consulter](https://gitissuesconsulter.herokuapp.com/).
 
 ## Available Scripts
 
